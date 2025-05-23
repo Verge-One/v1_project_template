@@ -1,4 +1,4 @@
-const requiredEnvVars = ["MONGODB_URI", "DB_NAME"];
+const requiredEnvVars = ["DATABASE_URL"];
 
 export async function checkEnv() {
   for (const varName of requiredEnvVars) {

@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:gen": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@mantine/core": "^8.0.1",
@@ -15,14 +19,16 @@
     "@mantine/modals": "^8.0.1",
     "@mantine/notifications": "^8.0.1",
     "@tanstack/react-query": "^5.76.1",
-    "@tanstack/react-query-devtools": "^5.76.1",
     "@trpc/client": "^11.1.2",
     "@trpc/next": "^11.1.2",
     "@trpc/react-query": "^11.1.2",
     "@trpc/server": "^11.1.2",
     "@trpc/tanstack-react-query": "^11.1.2",
-    "mongoose": "^8.15.0",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.43.1",
+    "drizzle-zod": "^0.8.1",
     "next": "15.3.2",
+    "pg": "^8.16.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "server-only": "^0.0.1",
@@ -30,12 +36,16 @@
     "zod": "^3.25.16"
   },
   "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.76.1",
     "@types/node": "^20",
+    "@types/pg": "^8.15.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.1",
     "postcss": "^8.5.3",
     "postcss-preset-mantine": "^1.17.0",
     "postcss-simple-vars": "^7.0.1",
+    "tsx": "^4.19.4",
     "typescript": "^5"
   }
 }

@@ -19,7 +19,7 @@ function makeQueryClient() {
       queries: {
         // With SSR, we usually want to set some default staleTime
         // above 0 to avoid refetching immediately on the client
-        staleTime: 60 * 1000,
+        staleTime: 30 * 1000,
       },
     },
   });
@@ -38,20 +38,6 @@ function getQueryClient() {
     return browserQueryClient;
   }
 }
-
-const trpcClient = createTRPCClient<AppRouter>({
-  links: [
-    loggerLink({
-      enabled: (opts) =>
-        process.env.NODE_ENV === "development" ||
-        (opts.direction === "down" && opts.result instanceof Error),
-    }),
-    httpBatchLink({
-      url: `${getBaseUrl()}/api/trpc`,
-      transformer: SuperJSON,
-    }),
-  ],
-});
 
 export default function TRPCWrapper({
   children,
